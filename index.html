@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Cedric 💙</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Playfair Display',serif;
+  background:linear-gradient(135deg,#e6f0ff,#ffffff);
+  color:#2b3a55;
+}.lock{ position:fixed;inset:0;z-index:9999; display:flex;flex-direction:column;justify-content:center;align-items:center; background:linear-gradient(135deg,#dbe9ff,#ffffff); text-align:center;padding:20px; } .lock input{ padding:12px 16px;border-radius:14px;border:1px solid #bcd3ff; font-size:16px;text-align:center;margin-top:12px;width:200px; } .lock button{ margin-top:16px;padding:12px 26px;border:none;border-radius:16px; background:#7aa2ff;color:white;font-size:16px;cursor:pointer; }
+
+audio{display:none}
+
+.intro{ min-height:100vh;display:none; flex-direction:column;justify-content:center;align-items:center; text-align:center;padding:20px; } .typing{ font-family:'Pacifico',cursive; font-size:2.6em; white-space:nowrap;overflow:hidden; width:0;border-right:3px solid #7aa2ff; animation:typing 4s steps(28,end) forwards, blink 0.7s infinite; } @keyframes typing{to{width:100%}} @keyframes blink{50%{border-color:transparent}}
+
+.next-btn{ margin-top:40px;padding:14px 30px;border-radius:20px; border:none;background:#7aa2ff;color:white;font-size:16px;cursor:pointer; opacity:0;animation:fadeUp 1.2s ease forwards;animation-delay:4.2s; }
+
+.menu{display:none;min-height:100vh;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px} .menu h2{margin-bottom:24px} .menu button{ width:260px;margin:12px;padding:16px;border-radius:22px; border:none;font-size:16px;background:#9dbbff;color:white;cursor:pointer; }
+
+section{display:none;min-height:100vh;padding:40px 20px}
+
+.card{ max-width:800px;margin:auto;background:#fffdf8; border-radius:22px;padding:32px 26px; box-shadow:0 14px 34px rgba(0,0,0,0.08); }
+
+/* LETTER */ .letter{ font-family:'Playfair Display',serif; font-size:17px;line-height:1.9; } .letter p{margin-bottom:20px}
+
+/* SCRAPBOOK */ .scrapbook{ display:grid;grid-template-columns:1fr;gap:22px;max-width:900px;margin:auto } .scrapbook img{ width:100%;border-radius:18px; background:#eef4ff;padding:10px }
+
+.close-btn{ display:block;margin:30px auto 0; padding:12px 26px;border-radius:18px; border:none;background:#7aa2ff;color:white;font-size:15px;cursor:pointer }
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}} </style>
+
+</head>
+<body><div class="lock" id="lock">
+  <h2>🔒 Untuk Cedric</h2>
+  <p>Masukkan sandi terlebih dahulu. Clue nya : bulan lahir kita</p>
+  <input type="password" id="pass" placeholder="••">
+  <button onclick="unlock()">Buka 💙</button>
+</div><audio id="bgMusic" loop>
+  <source src="musik-hindia.mp3" type="audio/mpeg">
+</audio><div class="intro" id="intro">
+  <div class="typing">Happy Birthday Sayang </div>
+  <button class="next-btn" onclick="goMenu()">Next ✨</button>
+</div><div class="menu" id="menu">
+  <h2>Pilih Cerita Kita 🤍</h2>
+  <button onclick="openText()">💌 Long Text</button>
+  <button onclick="openPhoto()">📸 Photo Memories</button>
+</div><section id="text">
+  <div class="card letter">
+    <p><strong>Dear Cedric – pacarku</strong></p>
+    <p>Selamat ulang tahun pacar aku yang paling ganteng. Kali ini aku ngucapin bukan lewat chat, tapi lewat sesuatu yang aku bikin khusus buat kamu meskipun pakai bantuan 🤏🏻.</p>
+    <p>Sweet seventeen ya, sayang. Semoga kamu selalu sehat, langkah kamu dimudahkan, dan rezeki kamu dilancarkan.</p>
+    <p>Terima kasih sudah nemenin aku selama ini, sudah jadi orang yang suabarrr banget sama aku, dan selalu ada walaupun aku banyak kurangnya hehe.</p>
+    <p>Kalau kamu capek, inget ya ada aku di sini. Kamu bebas cerita apa aja gausah ngerasa over karena aku your girlfriend not your friend.</p>
+    <p>Aku bersyukur bisa ketemu sama kamu. Maaf kalau aku belum sempurna, tapi aku pastiin cintaku ke kamu selalu full.</p>
+    <p>Selamat ulang tahun my love. Aku cinta kamu selalu 🤍🎉</p>
+    <button class="close-btn" onclick="backMenu()">⬅ Kembali</button>
+  </div>
+</section><section id="photo">
+  <div class="card scrapbook">
+    <img src="forbar-kita.jpg">
+    <img src="siluet-cedric.jpg">
+    <button class="close-btn" onclick="backMenu()">⬅ Kembali</button>
+  </div>
+</section><script>
+function unlock(){
+  if(pass.value==='01'){
+    lock.style.display='none';
+    intro.style.display='flex';
+    bgMusic.play();
+  } else alert('Sandi salah 😜');
+}
+function goMenu(){intro.style.display='none';menu.style.display='flex'}
+function openText(){menu.style.display='none';text.style.display='block'}
+function openPhoto(){menu.style.display='none';photo.style.display='block'}
+function backMenu(){text.style.display='none';photo.style.display='none';menu.style.display='flex'}
+</script></body>
+      </html>
